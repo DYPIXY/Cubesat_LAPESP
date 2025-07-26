@@ -46,6 +46,9 @@ void loop()
   
   //GY-91 Handler
   gyHandler();
+
+  Serial.println();
+  delay(200);
 }
 
 
@@ -103,6 +106,4 @@ void gyHandler()
     Serial.print("\tmagZ: " + String(mZ));
     Serial.print("\thorizontalDirection: " + String(mDirection));
   }
-  Serial.println();
-  delay(200);
 }

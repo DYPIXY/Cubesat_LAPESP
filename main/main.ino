@@ -40,7 +40,7 @@ void loop()
   gyHandler();
   Serial.println();
 
-  //Controle de ciclo
+  //\todo Controle de ciclo
 
 }
 
@@ -79,29 +79,31 @@ void gyHandler()
     aY = mySens.accelY();
     aZ = mySens.accelZ();
     aSqrt = mySens.accelSqrt();
-    Serial.print("accelX: " + String(aX));
-    Serial.print("accelY: " + String(aY));
-    Serial.print("accelZ: " + String(aZ));
-    Serial.print("accelSqrt: " + String(aSqrt));
+    Serial.print("\taccelX: " + String(aX));
+    Serial.print("\taccelY: " + String(aY));
+    Serial.print("\taccelZ: " + String(aZ));
+    Serial.print("\taccelSqrt: " + String(aSqrt));
   }
   Serial.print(GY91_MPU_LOGGER);
   if (mySens.gyroUpdate() == 0) {
     gX = mySens.gyroX();
     gY = mySens.gyroY();
     gZ = mySens.gyroZ();
-    Serial.print("gyroX: " + String(gX));
-    Serial.print("gyroY: " + String(gY));
-    Serial.print("gyroZ: " + String(gZ));
+    Serial.print("\tgyroX: " + String(gX));
+    Serial.print("\tgyroY: " + String(gY));
+    Serial.print("\tgyroZ: " + String(gZ));
   }
-    Serial.print(GY91_MPU_LOGGER);
+  Serial.print(GY91_MPU_LOGGER);
   if (mySens.magUpdate() == 0) {
     mX = mySens.magX();
     mY = mySens.magY();
     mZ = mySens.magZ();
     mDirection = mySens.magHorizDirection();
-    Serial.print("magX: " + String(mX));
-    Serial.print("magY: " + String(mY));
-    Serial.print("magZ: " + String(mZ));
-    Serial.print("horizontalDirection: " + String(mDirection));
+    Serial.print("\tmagX: " + String(mX));
+    Serial.print("\tmagY: " + String(mY));
+    Serial.print("\tmagZ: " + String(mZ));
+    Serial.print("\thorizontalDirection: " + String(mDirection));
+
+    //\todo DMP do MPU
   }
 }
