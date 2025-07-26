@@ -60,7 +60,7 @@ void bmeHandler()
   Serial.println(" hPa");
   
   Serial.print("Approx. Altitude = ");
-  Serial.print(bme.readAltitude(SEALEVELPRESSURE_HPA));
+  Serial.print(bme.readAltitude(pressure)); //USANDO A PRESSAO DO BMP DO GY91 COMO REFERENCIA
   Serial.println(" m");
   
   Serial.print("Humidity = ");
@@ -74,7 +74,7 @@ void gyHandler()
 {
   Serial.print("Temperature(°C): "); Serial.print(bmp.readTemperature() - 5.0);
   Serial.print("\tPressure: "); Serial.print(bmp.readPressure() / 100);
-  Serial.print("\tAltitude: "); Serial.print(bmp.readAltitude(SEALEVELPRESSURE_HPA));
+  Serial.print("\tAltitude: "); Serial.print(bmp.readAltitude(pressure));
   if (mySens.accelUpdate() == 0) {
     aX = mySens.accelX();
     aY = mySens.accelY();
