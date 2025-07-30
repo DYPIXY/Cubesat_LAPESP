@@ -7,8 +7,8 @@
 #define MPU_BMP_ADDRESS 0x77/0x68
 
 //GPIO, PINOUT, PINS
-#define SDA_PIN 21
-#define SCL_PIN 22
+#define SDA_PIN 22
+#define SCL_PIN 21
 
 //CONSTS 
 #define SEALEVELPRESSURE_HPA (1013.25) 

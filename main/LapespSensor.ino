@@ -13,8 +13,8 @@
 #define MPU_ADDRESS 0x68
 #define MPU_BMP_ADDRESS 0x77/0x68
 
-#define SDA_PIN 21
-#define SCL_PIN 22
+#define SDA_PIN 22
+#define SCL_PIN 21
 
 Adafruit_BME280 bme; // I2C
 Adafruit_BMP280 bmp; // I2C
