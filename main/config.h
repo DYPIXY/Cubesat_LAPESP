@@ -18,6 +18,28 @@
 #define BME_LOGGER "(BME)"
 #define GY91_MPU_LOGGER "(MPU)"
 #define GY91_BMP_LOGGER "(BMP)"
+/*
+struct esp2esp
+{
+  //BME
+  double BME_TEMP;
+  double BME_PRESSURE;
+  double BME_ALTITUDE;
+  double BME_HUMIDITY;
+
+  //MPU_1
+  double GY91_BMP_TEMP;
+  double GY91_BMP_PRESSURE;
+  double GY91_BMP_ALTITUDE;
+  double GY91_BMP_TEMP;
+  //MPU_2
+
+  //GPS
+  double GPS_LAT;
+  double GPS_LONG;
+  int GPS_COUNT
+};
+*/
 
 //END DEFINE
 #endif
