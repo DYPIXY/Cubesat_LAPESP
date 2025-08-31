@@ -1,9 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-//DEBUG MODE
-#define DEBUG true
-
 //ENDEREÇOS 
 #define BME_ADDRESS 0x76
 #define MPU_ADDRESS 0x68
@@ -12,12 +9,17 @@
 //GPIO, PINOUT, PINS
 #define SDA_PIN 22
 #define SCL_PIN 21
+#define RXD2 16
+#define TXD2 17
 
 //CONSTS 
 #define SEALEVELPRESSURE_HPA (1013.25) 
 
 //CONFIGS
 #define SAMPLES_PER_SECOND 10
+#define GPS_BAUD 9600
+
+//LOGGERS
 #define BME_LOGGER "(BME)"
 #define GY91_MPU_LOGGER "(MPU)"
 #define GY91_BMP_LOGGER "(BMP)"

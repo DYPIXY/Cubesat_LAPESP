@@ -1,6 +1,3 @@
-// Define the RX and TX pins for Serial 2
-#define RXD2 16
-#define TXD2 17
 
 #define GPS_BAUD 9600
 
@@ -27,13 +24,4 @@ void loop()
     }
     delay(1000);
     Serial.println("-------------------------------");
-}
-
-std::string Get() 
-{
-    std::string result = ",GPS_UNDEFINED";
-    
-    
-    
-    return result;
 }
