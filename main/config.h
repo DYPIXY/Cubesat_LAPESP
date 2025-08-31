@@ -4,7 +4,7 @@
 //ENDEREÇOS 
 #define BME_ADDRESS 0x76
 #define MPU_ADDRESS 0x68
-#define MPU_BMP_ADDRESS 0x77/0x68
+#define MPU_BMP_ADDRESS 0x77
 
 //GPIO, PINOUT, PINS
 #define SDA_PIN 22

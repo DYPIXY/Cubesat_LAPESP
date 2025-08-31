@@ -6,36 +6,17 @@
 #include <MPU9250_asukiaaa.h>
 #include "config.h"
 
-//Objeto para envio
-struct esp2esp
-{
-  //BME
-  double BME_TEMP;
-  double BME_PRESSURE;
-  double BME_ALTITUDE;
-  double BME_HUMIDITY;
-
-  //GY MPU9250
-  double GY91_BMP_TEMP;
-  double GY91_BMP_PRESSURE;
-  double GY91_BMP_ALTITUDE;
-  double GY91_BMP_;
-
-  //GPS
-  double GPS_LAT;
-  double GPS_LONG;
-  int GPS_COUNT
-};
-
-
 Adafruit_BME280 bme; 
 Adafruit_BMP280 bmp; 
 MPU9250_asukiaaa mySens;
 
+static LapespDTO* lapespDTO;
 static float aX, aY, aZ, aSqrt, gX, gY, gZ, mDirection, mX, mY, mZ, bmpInitialPressure, bmeInitialPressure;
 
 void setup() 
 {
+  lapespDTO = new LapespDTO;
+
   Serial.begin(115200);
 
   //BME280 SETUP
@@ -49,23 +30,15 @@ void setup()
   mySens.beginGyro();
   mySens.beginMag();
 
-  bmp.begin(0x76);
+  bmp.begin(MPU_BMP_ADDRESS);
   bmpInitialPressure = bmp.readPressure();
 }
 
 void loop() 
 { 
-  //BME Handler
   bmeHandler();
-  
-  //GY-91 Handler
   gyHandler();
-  Serial.println();
-
-  //\todo Controle de ciclo
-
 }
-
 
 void bmeHandler() 
 {
